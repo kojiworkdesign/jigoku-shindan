@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>あなたの職場、地獄度診断</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="fire">🔥</div>
+      <h1>あなたの職場<br>地獄度診断</h1>
+      <p class="subtitle">5問に答えるだけ。あなたの職場の地獄レベルを判定します。</p>
+    </header>
+
+    <form id="quiz" class="quiz">
+      <div class="question">
+        <p class="q-label">Q1. 週の残業時間は？</p>
+        <div class="options">
+          <label><input type="radio" name="q1" value="0"> ほぼゼロ（神）</label>
+          <label><input type="radio" name="q1" value="1"> 10時間以内</label>
+          <label><input type="radio" name="q1" value="2"> 20〜30時間</label>
+          <label><input type="radio" name="q1" value="3"> 40時間超（もはや二重生活）</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <p class="q-label">Q2. 上司はどんなタイプ？</p>
+        <div class="options">
+          <label><input type="radio" name="q2" value="0"> 頼れる兄貴・姉御</label>
+          <label><input type="radio" name="q2" value="1"> 普通（可もなく不可もなく）</label>
+          <label><input type="radio" name="q2" value="2"> 気分屋で地雷が多い</label>
+          <label><input type="radio" name="q2" value="3"> 存在自体が罰ゲーム</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <p class="q-label">Q3. 有給は取れる？</p>
+        <div class="options">
+          <label><input type="radio" name="q3" value="0"> 自由に取れる</label>
+          <label><input type="radio" name="q3" value="1"> 申請すれば何とか</label>
+          <label><input type="radio" name="q3" value="2"> 空気的に無理</label>
+          <label><input type="radio" name="q3" value="3"> 有給って何ですか（哲学）</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <p class="q-label">Q4. 謎ルールや慣習がある？</p>
+        <div class="options">
+          <label><input type="radio" name="q4" value="0"> 特にない</label>
+          <label><input type="radio" name="q4" value="1"> 少しある（まあ許せる）</label>
+          <label><input type="radio" name="q4" value="2"> 結構ある（なぜ存在するのか）</label>
+          <label><input type="radio" name="q4" value="3"> ルールブックが古典文学レベル</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <p class="q-label">Q5. 「これ、うちだけ？」感は？</p>
+        <div class="options">
+          <label><input type="radio" name="q5" value="0"> 全然ない（まともな会社）</label>
+          <label><input type="radio" name="q5" value="1"> たまに思う</label>
+          <label><input type="radio" name="q5" value="2"> 週3回は思う</label>
+          <label><input type="radio" name="q5" value="3"> 毎日思いながら出勤している</label>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn" id="submitBtn" disabled>
+        🔥 地獄度を診断する
+      </button>
+    </form>
+
+    <div id="result" class="result hidden">
+      <div id="loading" class="loading">
+        <div class="spinner"></div>
+        <p>診断中...（あなたの職場の地獄を計測しています）</p>
+      </div>
+      <div id="resultContent" class="result-content hidden">
+        <div class="hell-meter">
+          <p class="hell-label">地獄度</p>
+          <div class="hell-score" id="hellScore"></div>
+          <div class="hell-name" id="hellName"></div>
+        </div>
+        <div class="diagnosis-text" id="diagnosisText"></div>
+        <div class="share-area">
+          <p class="share-label">結果をシェアする</p>
+          <a id="tweetBtn" href="#" target="_blank" class="tweet-btn">
+            𝕏 でシェア
+          </a>
+        </div>
+        <div class="made-with">
+          <p>このアプリは <strong>Claude Code</strong> で作りました →
+            <a href="#" class="note-link">作り方をnoteで公開中</a>
+          </p>
+        </div>
+        <button class="retry-btn" onclick="location.reload()">もう一度やる</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
