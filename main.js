@@ -60,7 +60,7 @@ form.addEventListener('submit', async (e) => {
     document.getElementById('diagnosisText').textContent = data.diagnosis;
 
     const tweetText = encodeURIComponent(
-      `私の職場の地獄度は ${hellPercent}%「${getHellName(hellPercent)}」でした🔥\n\n#職場地獄度診断\nhttps://your-app-url.vercel.app`
+      `私の職場の地獄度は ${hellPercent}%「${getHellName(hellPercent)}」でした🔥\n\n#職場地獄度診断\nhttps://jigoku-shindan-o0prbwmym-kojiworkdesigns-projects.vercel.app/`
     );
     document.getElementById('tweetBtn').href = `https://twitter.com/intent/tweet?text=${tweetText}`;
 
