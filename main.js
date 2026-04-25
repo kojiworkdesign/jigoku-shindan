@@ -9,7 +9,16 @@ const form = document.getElementById('quiz');
     return '💀 最深部・無間地獄';
   }
 
-  form.addEventListener('change', checkAllAnswered);
+  form.addEventListener('change', function(e) {
+    if (e.target.type === 'radio') {
+      var q = e.target.name;
+      var freeWrap = document.getElementById('free-' + q);
+      if (freeWrap) {
+        freeWrap.classList.toggle('visible', e.target.value === 'other');
+      }
+    }
+    checkAllAnswered();
+  });
 
   form.addEventListener('submit', async function(e) {
     e.preventDefault();

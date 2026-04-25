@@ -273,6 +273,39 @@ h1 {
   color: #fff;
 }
 
+.free-text-wrap {
+  display: none;
+  margin-top: 10px;
+}
+
+.free-text-wrap.visible {
+  display: block;
+}
+
+.free-text-wrap textarea {
+  width: 100%;
+  min-height: 80px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 100, 0, 0.4);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 0.9rem;
+  padding: 10px 12px;
+  resize: vertical;
+  font-family: inherit;
+  line-height: 1.6;
+}
+
+.free-text-wrap textarea::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.free-text-wrap textarea:focus {
+  outline: none;
+  border-color: #ff6b00;
+  background: rgba(255, 255, 255, 0.12);
+}
+
 @media (max-width: 480px) {
   h1 { font-size: 1.6rem; }
   .hell-score { font-size: 3rem; }
